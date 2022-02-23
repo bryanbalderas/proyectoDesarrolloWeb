@@ -46,9 +46,10 @@ input[type=text],input[type=tel],input[type=email], select{
     resize: vertical;
 }
 label{
-    padding: 12px 12px 12px 0px; /*padding top, padding right, padding botton, padding left*/
-    display : inline-block;
+    padding: 12px 12px 12px 0;/*padding-top,pa..right,pad..bottom,padding-left*/
+    display: inline-block;
     float: right;
+    font-weight: bold;
 }
 input[type=submit]{
     background-color: #4CAF50;
@@ -69,15 +70,25 @@ input[type=submit]{
     top: 40px;
 }
 
+.container{
+    border-radius: 5px;
+    /*border: 1px solid red;*/
+    background-color: rgb(57,207,102,0.3);
+    padding-left: 100px;
+    padding-right: 100px;    
+    position: relative;
+    top: 55px;
+}
+
 .col-25{
     float: left;
-    width: 25%;
+    width: 10%;
     margin-top: 6px;
 }
 
 .col-75{
     float: left;
-    width: 75%;
+    width: 90%;
     margin-top: 6px;
 }
 
@@ -115,5 +126,15 @@ input[type=submit]{
     }
     label{
         float: left;
+    }
+    .container{
+        padding: 10px;
+    }
+    p{
+        font-size: 120%;
+    }
+    h1{
+        text-align: center;
+        font-size: 190%;
     }
 }

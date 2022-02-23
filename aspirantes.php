@@ -10,18 +10,20 @@
     <!-- Menu principal -->
     <div class="container-fluid">
         <div class="row">
-        <?php
-            include_once "inclusiones/menu_horizontal_superior.php";
-        ?>
+            <div class="col-12">
+                <?php
+                    include_once "inclusiones/menu_horizontal_superior.php";
+                ?>
+            </div>
         </div>
     </div>
 
-        <div id ="contenedor">
+        <div id ="contenedor" class="container">
             <h1> Registre para uno o mas cursos </h1>
             <p>
                 Puede seleccionar uno o mas cursos, es requisito el RFC
             </p>
-            <form name="forma" id="forma" action ="#" method= "post" onsubmit="" >
+            <form name="forma" id="forma" action ="inserta_aspirante.php" method= "post" onsubmit="" >
                 <div id= "row"> 
                     <div class="col-25">
                         <label> RFC: </label>

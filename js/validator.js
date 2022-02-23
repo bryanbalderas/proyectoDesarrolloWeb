@@ -15,6 +15,8 @@ function valida_aspirante(){
     var pattern3=/^[0-9]{10}?$/;
     var emailPattern=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
+    var pwdPattern=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+
 
     if(js_rfc.length== 0){
         alert("Error: el rfc no puede ir vacio");
@@ -40,7 +42,7 @@ function valida_aspirante(){
     }else if(js_cur==0){
         alert("Error: Debe seleccionar en la lista un curso");
         return false;
-    }else if(!pattern2.test(js_nom) || !pattern2.test(js_pat) || !pattern2.test(js_mat)){
+    }else if(!pattern2.test(js_nom) || !pattern2.test(js_pat)){
         alert('error: el apellido paterno,materno y nombre no pueden llevar numeros y minimo son 3 caracteres');
         return false;
 
@@ -78,6 +80,41 @@ function valida_aspirante(){
         });
         
     }else{
+        alert('confirmo');
+        document.getElementById('forma').submit();
         return true;
+        
     }
+}
+
+function valida_login(){
+    var js_us=document.getElementById("f_user").value.trim();
+    var js_pw=document.getElementById("f_pwd").value.trim();
+
+
+    if(js_us.length==0 || js_pw.length==0){
+        Swal.fire({
+            icon:'error',
+            title:'Usuario y password',
+            text:'El usuario y password deben ir llenos'
+        });
+        return false;
+
+    }else if(js_us.length<8 || js_pw.length<8){
+        Swal.fire({
+            icon:'error',
+            title:'Usuario y password',
+            text:'El usuario y password deben contener mas de 8 caracteres'
+        });
+        return false;
+    }else if(!pwdPattern.test(js_pw)){
+        Swal.fire({
+            icon:'error',
+            title:'Password',
+            text:'should contain at least one digit \n should contain at least one lower case'
+        });
+        return false;
+    }
+
+    return false;
 }
